@@ -1,6 +1,6 @@
 import { ADD_ITEM,REMOVE_ITEM } from "./ItemTypes";
 const init={
-        items:[{index:0,title:"First Item"},{index:1,title:"Second Item"}],
+        items:[{index:0,title:"First Item"},{index:1,title:"Hit Done to Delete the Task -->"}],
         ind_value:2
     }
 

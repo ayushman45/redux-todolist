@@ -2,11 +2,11 @@ import React from 'react'
 import { useState,useRef,useEffect } from 'react'
 import '../Redux'
 import { addItem } from '../Redux'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 function AddComponent() {
     const dispatch=useDispatch()
-    const [item,setItem] = React.useState('')
+    const [item,setItem] = useState('')
     const inputEle=useRef(null)
 
     useEffect(()=>{
@@ -14,9 +14,12 @@ function AddComponent() {
     },[])
 
     const handleSubmit = (item)=>{
-        var ele=document.querySelector("#addField")
-        ele.value=""
+        var ele=document.querySelector("input")
         dispatch(addItem(item))
+        ele.value=""
+        inputEle.current.focus()
+        const reset=()=>setItem('')
+        reset()
     }
   return (
     <div id="add-container">
